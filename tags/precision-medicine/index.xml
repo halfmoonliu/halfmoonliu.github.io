@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>precision medicine on LIU Yun-Chung</title>
+    <link>https://halfmoonliu.github.io/tags/precision-medicine/</link>
+    <description>Recent content in precision medicine on LIU Yun-Chung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/precision-medicine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evaluate Intensive Care Needs with ML</title>
+      <link>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</guid>
+      <description>&lt;p&gt;Machine learning (ML) can be applied in hospital to improve health care quality. This is a demonstration of steps to build ML models to evaluate the need for intensive care within the first 24 hours of admission. The post includes the workflow from data cleansing, feature engineering and model building that can be direcly applied in real-world settings.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
