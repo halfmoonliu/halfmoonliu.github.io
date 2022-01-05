@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          523 words
+          521 words
         </span>
         <span class="split">
           ·
@@ -93,7 +93,7 @@ if (!doNotTrack) {
     <li><a href="#quick-summary">Quick Summary</a></li>
     <li><a href="#dataset">Dataset:</a></li>
     <li><a href="#step-1-build-corpus--tags-dictionary">Step 1: Build Corpus &amp; Tags dictionary</a></li>
-    <li><a href="#step-2-turn-sentenses-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentenses to list of tokens and name entity tags</a></li>
+    <li><a href="#step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentences to list of tokens and name entity tags</a></li>
     <li><a href="#step-3-map-words-and-tags-to-number">Step 3: Map words and tags to number</a></li>
     <li><a href="#step-4-padding">Step 4: Padding</a></li>
     <li><a href="#step-5-model-buildup">Step 5: Model Buildup</a></li>
@@ -113,15 +113,15 @@ if (!doNotTrack) {
 
     <div class="content">
       <p>Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here I is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONRLL 2003 dataset.</p>
-<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstates the workflow of building recurrent neural network model to predict name entity lables using tensor flow. With a simple structure of one embedding layer, one biderectional LSTM layer and one dense layer, prediction accuracy on held-out test data set can achieve above .95 on CONLL-2003 data set. a Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyper parameter tuning and test).</p>
-<h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CONLL-2003 dataset were already seperated into train, validation and test sets. All three datasets contain sentences and name-entity tags corresponding to each word in the sentences.</p>
+<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstrates the workflow of building recurrent neural network model to predict name entity labels using TensorFlow. With a simple structure of one embedding layer, one bidirectional LSTM layer and one dense layer, prediction accuracy on held-out test data set can achieve above .95 on CONLL-2003 data set. a Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyperparameter tuning and test).</p>
+<h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CONLL-2003 dataset were already separated into train, validation and test sets. All three datasets contain sentences and name-entity tags corresponding to each word in the sentences.</p>
 <h2 id="step-1-build-corpus--tags-dictionary">Step 1: Build Corpus &amp; Tags dictionary <a href="#step-1-build-corpus--tags-dictionary" class="anchor">🔗</a></h2><p>To convert words to numbers, we first read in the sentences and name entities in the training dataset, break sentences into lists of words (tokenization) and tags and create a dictionary &ldquo;Corpus&rdquo; to map every word to a number, plus an &ldquo;UNK&rdquo; token for unknown words and another dictionary  &ldquo;Tags&rdquo; to store mapping of all name entity tags and the corresponding number.</p>
-<h2 id="step-2-turn-sentenses-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentenses to list of tokens and name entity tags <a href="#step-2-turn-sentenses-to-list-of-tokens-and-name-entity-tags" class="anchor">🔗</a></h2><p>To convert words and name entity tags into numbers, We need to first break sentences in to lists of words (or tokens).</p>
+<h2 id="step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentences to list of tokens and name entity tags <a href="#step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags" class="anchor">🔗</a></h2><p>To convert words and name entity tags into numbers, We need to first break sentences in to lists of words (or tokens).</p>
 <h2 id="step-3-map-words-and-tags-to-number">Step 3: Map words and tags to number <a href="#step-3-map-words-and-tags-to-number" class="anchor">🔗</a></h2><p>With a map of token-number pair and tag-number pairs, we can convert the sentences in the dataset into numbers for model build-up later.</p>
-<h2 id="step-4-padding">Step 4: Padding <a href="#step-4-padding" class="anchor">🔗</a></h2><p>To make all sentences in the dataset the same length to put build models, we add zeros to the end of each sentece (called padding) to make them all the same length of the longest sentence.</p>
-<h2 id="step-5-model-buildup">Step 5: Model Buildup <a href="#step-5-model-buildup" class="anchor">🔗</a></h2><p>I use tensorflow to build a sequence model containing an embedding layer, a bi-directional Long-Short Term Memory (LSTM) layer and a dense layer. The structures (layers in the model) and other hyperparameters (e.g. learning rate, activation function, dropout rate, regularization) are all hyper parameters which can be tunned to optimize evaluation matrics using the training and validation data set.</p>
-<h2 id="step-6-model-training">Step 6: Model training <a href="#step-6-model-training" class="anchor">🔗</a></h2><p>After defining model structure, we can feed the preprocessed (tokenized, mapped and padded) training data to train the model. Epochs (times the model runs through all the training data) and batch size (during an epoch, training data are processed on batch at a time untill the whole training set is processed) are to be adjusted to maximize performance.</p>
-<h2 id="step-7-validation">Step 7: Validation <a href="#step-7-validation" class="anchor">🔗</a></h2><p>Hyperparameters can be tuned to maximize the model performance on the validation set. The performance on the training and validation set both serve as reference for hyperparameter tuning(eg. bias-variance issue).</p>
+<h2 id="step-4-padding">Step 4: Padding <a href="#step-4-padding" class="anchor">🔗</a></h2><p>To make all sentences in the dataset the same length to put build models, we add zeros to the end of each sentence (called padding) to make them all the same length of the longest sentence.</p>
+<h2 id="step-5-model-buildup">Step 5: Model Buildup <a href="#step-5-model-buildup" class="anchor">🔗</a></h2><p>I used TensorFlow to build a sequence model containing an embedding layer, a bi-directional Long-Short Term Memory (LSTM) layer and a dense layer. The structures (layers in the model) and other hyperparameters (e.g. learning rate, activation function, dropout rate, regularization) are all hyper parameters which can be tunned to optimize evaluation matrices using the training and validation data set.</p>
+<h2 id="step-6-model-training">Step 6: Model training <a href="#step-6-model-training" class="anchor">🔗</a></h2><p>After defining model structure, we can feed the preprocessed (tokenized, mapped and padded) training data to train the model. Epochs (times the model runs through all the training data) and batch size (during an epoch, training data are processed on batch at a time until the whole training set is processed) are to be adjusted to maximize performance.</p>
+<h2 id="step-7-validation">Step 7: Validation <a href="#step-7-validation" class="anchor">🔗</a></h2><p>Hyperparameters can be tuned to maximize the model performance on the validation set. The performance on the training and validation set both serve as reference for hyperparameter tuning(e.g. bias-variance issue).</p>
 <h2 id="step-8-test-the-model-with-unseen-test-data">Step 8: Test the Model with Unseen Test Data <a href="#step-8-test-the-model-with-unseen-test-data" class="anchor">🔗</a></h2><p>The final model and hyperparameters should be tested on unseen (held-out) dataset. This is to avoid overfitting due to hyperparameter tuning. The testing accuracy reached above .95 using bidirectional LSTM on CONLL-2003 test data.</p>
     </div>
 
@@ -199,7 +199,7 @@ if (!doNotTrack) {
     <div class="copyright">
     
        © Copyright 
-       2021 
+       2022 
        <span class="split">
         <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
   <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
