@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          342 words
+          381 words
         </span>
         <span class="split">
           ·
@@ -95,6 +95,7 @@ if (!doNotTrack) {
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#the-aroma-wheel">The Aroma Wheel</a></li>
     <li><a href="#use-aroma-word-count-to-represent-wine-flavor">Use Aroma Word Count To Represent Wine Flavor</a></li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
           </div>
@@ -109,9 +110,9 @@ if (!doNotTrack) {
     <div class="content">
       <p>In this project, I took a modified version of the famous aroma wheel and use word-count to represent the characteristics of French wine. Don&rsquo;t know how to choose a bottle of wine? Check out your favorite aroma!</p>
 <h2 id="question">Question <a href="#question" class="anchor">🔗</a></h2><p>How can we describe the flavor of wine using huge amount of review data and make recommendation for consumers?</p>
-<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/wine_reccomendation" target="_blank" rel="noopener">project</a> used aroma word count to represent the characteristics of wine from different French régions. A system can recommend wine to customers with similar aroma (e.g. You may also want to try the wine from this région because 30% of the wine there were described used the term &ldquo;Apple&rdquo;). A quick project walkthrough slide can be found <a href="https://github.com/halfmoonliu/wine_reccomendation/blob/master/A%20Taste%20of%20French%20wine_brief_walkthrough.pdf" target="_blank" rel="noopener">here</a>. Below is a introduction on the methods.</p>
+<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/wine_reccomendation" target="_blank" rel="noopener">project</a> used aroma word count to represent the characteristics of wine from different French régions. A system can recommend wine to customers with similar aroma (e.g. You may also want to try the wine from this région because 30% of the wine there were described used the term &ldquo;Apple&rdquo;). A quick project walkthrough slide can be found <a href="https://github.com/halfmoonliu/wine_reccomendation/blob/master/A%20Taste%20of%20French%20wine_brief_walkthrough.pdf" target="_blank" rel="noopener">here</a>. Below is an introduction on the methods.</p>
 <h2 id="dataset">Dataset <a href="#dataset" class="anchor">🔗</a></h2><p>The dataset used for this project contains more than 130,000 wine reviews form the Wine Enthusiast website (<a href="https://www.winemag.com/%29" target="_blank" rel="noopener">https://www.winemag.com/)</a>. The data is preprocessed and put on Kaggle. Besides the reviews written by sommeliers on different wine, it also contains columns like country, designation, points, price, province, region, title, variety, winery and so on.</p>
-<h2 id="the-aroma-wheel">The Aroma Wheel <a href="#the-aroma-wheel" class="anchor">🔗</a></h2><p>Aroma words, taken from modified version of wine aroma wheel (Nobel et al., 1987), was used to describe wine from different regions of France. Here are some examples words in the aroma wheel: iris, jasmine, rose (flower) , apple, pear, peach(tree fruit), grass, tomato(vegetable), butter, cream, lager(microbial).</p>
+<h2 id="the-aroma-wheel">The Aroma Wheel <a href="#the-aroma-wheel" class="anchor">🔗</a></h2><p>Aroma words, taken from modified version of wine aroma wheel (Nobel et al., 1987), was used to describe wine from different regions of France. Here are some examples words in the aroma wheel: iris, jasmine, rose (flower) , apple, pear, peach (tree fruit), grass, tomato (vegetable), butter, cream, lager (microbial).</p>
 <h2 id="use-aroma-word-count-to-represent-wine-flavor">Use Aroma Word Count To Represent Wine Flavor <a href="#use-aroma-word-count-to-represent-wine-flavor" class="anchor">🔗</a></h2><p>In this project, I used wine from different French régions to demonstrate how a group of wine can be represented using aroma words. The detail steps are as follows:</p>
 <ol>
 <li>All wine reviews were tokenized, with stop words and punctuation removed.</li>
@@ -119,6 +120,7 @@ if (!doNotTrack) {
 <li>Each aroma term count was divided by total aroma word count by région. The wine from any région can thus be represented with AromaA 5%, AromaB 3%&hellip;adding to 100%.</li>
 <li>The similarity of wine from different région can be calculated using L2 distance between aroma-term-count percentage and thus make recommendations(e.g. wine with similar or different aroma).</li>
 </ol>
+<h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><p>Noble, A. C., R. A. Arnold, J. Bluechsenstein, E. J. Leach, J. O. Schmidt, and P. M. Stern. 1987. Modification of a standardized system of wine aroma terminology. <em>American Journal of Enology and Viticulture</em> 38:143–46.</p>
     </div>
 
     
