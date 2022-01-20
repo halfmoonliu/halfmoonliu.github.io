@@ -22,7 +22,7 @@
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition-link/</guid>
-      <description>&lt;p&gt;Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONRLL 2003 dataset.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONLL 2003 dataset.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONRLL 2003 dataset.">
+<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONLL 2003 dataset.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -112,7 +112,7 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONRLL 2003 dataset.</p>
+      <p>Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONLL 2003 dataset.</p>
 <h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstrates the workflow of building recurrent neural network model to predict name entity labels using TensorFlow. With a simple structure of one embedding layer, one bidirectional LSTM layer and one dense layer, prediction accuracy on held-out test data set can achieve above .95 on CONLL-2003 data set. Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyperparameter tuning and test).</p>
 <h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CONLL-2003 dataset were already separated into train, validation and test sets. All three datasets contain sentences and name-entity tags corresponding to each word in the sentences.</p>
 <h2 id="step-1-build-corpus--tags-dictionary">Step 1: Build Corpus &amp; Tags dictionary <a href="#step-1-build-corpus--tags-dictionary" class="anchor">🔗</a></h2><p>To convert words to numbers, we first read in the sentences and name entities in the training dataset, break sentences into lists of words (tokenization) and tags.  Then we create a dictionary &ldquo;Corpus&rdquo; to map every word to a number, plus an &ldquo;UNK&rdquo; token for unknown words and another dictionary &ldquo;Tags&rdquo; to store mapping of all name entity tags and the corresponding number.</p>
