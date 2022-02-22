@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONLL 2003 dataset.">
+<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          518 words
+          519 words
         </span>
         <span class="split">
           ·
@@ -92,14 +92,14 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#quick-summary">Quick Summary</a></li>
     <li><a href="#dataset">Dataset:</a></li>
-    <li><a href="#step-1-build-corpus--tags-dictionary">Step 1: Build Corpus &amp; Tags dictionary</a></li>
-    <li><a href="#step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentences to list of tokens and name entity tags</a></li>
-    <li><a href="#step-3-map-words-and-tags-to-number">Step 3: Map words and tags to number</a></li>
+    <li><a href="#step-1-build-corpus--tags-dictionary">Step 1: Build corpus &amp; tags dictionary</a></li>
+    <li><a href="#step-2-turning-sentences-into-lists-of-tokens-and-name-entity-tags">Step 2: Turning sentences into lists of tokens and name entity tags</a></li>
+    <li><a href="#step-3-map-words-and-tags-to-numbers">Step 3: Map words and tags to numbers</a></li>
     <li><a href="#step-4-padding">Step 4: Padding</a></li>
-    <li><a href="#step-5-model-buildup">Step 5: Model Buildup</a></li>
+    <li><a href="#step-5-model-buildup">Step 5: Model buildup</a></li>
     <li><a href="#step-6-model-training">Step 6: Model training</a></li>
     <li><a href="#step-7-validation">Step 7: Validation</a></li>
-    <li><a href="#step-8-test-the-model-with-unseen-test-data">Step 8: Test the Model with Unseen Test Data</a></li>
+    <li><a href="#step-8-test-the-model-with-unseen-test-data">Step 8: Test the model with unseen test data</a></li>
   </ul>
 </nav>
           </div>
@@ -112,17 +112,17 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>Name Entity Recognition (NER) is a natural language processing task to categorize words into name entities, which has many applications (e.g. searching). Here is a demo of how I trained a bi-Directional Long-Short Term Memory (BiLSTM) model to predict name entities with accuracy of over .95 using CONLL 2003 dataset.</p>
-<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstrates the workflow of building recurrent neural network model to predict name entity labels using TensorFlow. With a simple structure of one embedding layer, one bidirectional LSTM layer and one dense layer, prediction accuracy on held-out test data set can achieve above .95 on CONLL-2003 data set. Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyperparameter tuning and test).</p>
-<h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CONLL-2003 dataset were already separated into train, validation and test sets. All three datasets contain sentences and name-entity tags corresponding to each word in the sentences.</p>
-<h2 id="step-1-build-corpus--tags-dictionary">Step 1: Build Corpus &amp; Tags dictionary <a href="#step-1-build-corpus--tags-dictionary" class="anchor">🔗</a></h2><p>To convert words to numbers, we first read in the sentences and name entities in the training dataset, break sentences into lists of words (tokenization) and tags.  Then we create a dictionary &ldquo;Corpus&rdquo; to map every word to a number, plus an &ldquo;UNK&rdquo; token for unknown words and another dictionary &ldquo;Tags&rdquo; to store mapping of all name entity tags and the corresponding number.</p>
-<h2 id="step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags">Step 2: Turn sentences to list of tokens and name entity tags <a href="#step-2-turn-sentences-to-list-of-tokens-and-name-entity-tags" class="anchor">🔗</a></h2><p>To convert words and name entity tags into numbers, We need to first break sentences in to lists of words (or tokens).</p>
-<h2 id="step-3-map-words-and-tags-to-number">Step 3: Map words and tags to number <a href="#step-3-map-words-and-tags-to-number" class="anchor">🔗</a></h2><p>With a map of token-number pair and tag-number pairs, we can convert the sentences in the dataset into numbers for model build-up later.</p>
-<h2 id="step-4-padding">Step 4: Padding <a href="#step-4-padding" class="anchor">🔗</a></h2><p>To make all sentences in the dataset the same length to put build models, we add zeros to the end of each sentence (i.e. padding) to make them all the same length of the longest sentence.</p>
-<h2 id="step-5-model-buildup">Step 5: Model Buildup <a href="#step-5-model-buildup" class="anchor">🔗</a></h2><p>I used TensorFlow to build a sequence model containing an embedding layer, a bi-directional Long-Short Term Memory (LSTM) layer and a dense layer. The structures (layers in the model) and other hyperparameters (e.g. learning rate, activation function, dropout rate, regularization) are all hyperparameters which can be tunned to optimize evaluation matrices using the training and validation data set.</p>
-<h2 id="step-6-model-training">Step 6: Model training <a href="#step-6-model-training" class="anchor">🔗</a></h2><p>After defining model structure, we can feed the preprocessed (tokenized, mapped and padded) training data to train the model. Epochs (times the model runs through all the training data) and batch size (during an epoch, training data are processed on batch at a time until the whole training set is processed) are to be adjusted to optimize performance.</p>
-<h2 id="step-7-validation">Step 7: Validation <a href="#step-7-validation" class="anchor">🔗</a></h2><p>Hyperparameters can be tuned to optimize the model performance on the validation set. The performance on the training and validation set both serve as reference for hyperparameter tuning(e.g. bias-variance issue).</p>
-<h2 id="step-8-test-the-model-with-unseen-test-data">Step 8: Test the Model with Unseen Test Data <a href="#step-8-test-the-model-with-unseen-test-data" class="anchor">🔗</a></h2><p>The final model and hyperparameters should be tested on unseen (held-out) dataset. This is to avoid overfitting during hyperparameter tuning. The testing accuracy reached above .95 using bidirectional LSTM on CONLL-2003 test data.</p>
+      <p>Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.</p>
+<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstrates the workflow of building recurrent neural network models to predict name entity labels using TensorFlow. With a simple structure composed of one embedding layer, one bidirectional LSTM layer, and one dense layer, prediction accuracy on hold-out test datasets can achieve above .95 on the CoNLL-2003 Dataset. Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyperparameter tuning and test).</p>
+<h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CoNLL-2003 Dataset was separated into training, validation and testing sets. All three datasets contain sentences and name-entity tags corresponding to each word in the text.</p>
+<h2 id="step-1-build-corpus--tags-dictionary">Step 1: Build corpus &amp; tags dictionary <a href="#step-1-build-corpus--tags-dictionary" class="anchor">🔗</a></h2><p>To convert words to numbers, we first read in the sentences and name entities in the training dataset, and thereafter break sentences into word lists (tokenization) and tags. Then we create a dictionary, denoted “Corpus,” to map every word to a number and use an UNK token for unknown words. Another dictionary, denoted “Tags,” is used to store mapping of all name entity tags and their corresponding numbers.</p>
+<h2 id="step-2-turning-sentences-into-lists-of-tokens-and-name-entity-tags">Step 2: Turning sentences into lists of tokens and name entity tags <a href="#step-2-turning-sentences-into-lists-of-tokens-and-name-entity-tags" class="anchor">🔗</a></h2><p>To convert words and name entity tags into numbers, we need to first break sentences in to lists of words (or tokens).</p>
+<h2 id="step-3-map-words-and-tags-to-numbers">Step 3: Map words and tags to numbers <a href="#step-3-map-words-and-tags-to-numbers" class="anchor">🔗</a></h2><p>With a map of token-number and tag-number pairs, we can convert dataset sentences into numbers for later model build-up.</p>
+<h2 id="step-4-padding">Step 4: Padding <a href="#step-4-padding" class="anchor">🔗</a></h2><p>To make all sentences in the dataset the same length to build models, zeros are added to the ends of each sentence (i.e. padding) to create a uniform length based on the longest sentence.</p>
+<h2 id="step-5-model-buildup">Step 5: Model buildup <a href="#step-5-model-buildup" class="anchor">🔗</a></h2><p>I used TensorFlow to build a sequence model containing an embedding layer, a Bi-directional Long-Short Term Memory (BiLSTM) layer and a dense layer. The structures (model layers) and other hyperparameters (e.g., learning rate, activation function, dropout rate, regularization) are all hyperparameters that can be tuned to optimize evaluation matrices using the training and validation dataset.</p>
+<h2 id="step-6-model-training">Step 6: Model training <a href="#step-6-model-training" class="anchor">🔗</a></h2><p>After defining model structure, we can feed the preprocessed (tokenized, mapped and padded) training data to train the model. Epochs (times the model runs through all the training data) and batch size (during an epoch, training data are processed on batch at a time until the whole training set is processed) are adjusted to optimize performance.</p>
+<h2 id="step-7-validation">Step 7: Validation <a href="#step-7-validation" class="anchor">🔗</a></h2><p>Hyperparameters can be tuned to optimize the model performance of the validation set. The performances of the training and validation set both serve as references for hyperparameter tuning(e.g. bias-variance issue).</p>
+<h2 id="step-8-test-the-model-with-unseen-test-data">Step 8: Test the model with unseen test data <a href="#step-8-test-the-model-with-unseen-test-data" class="anchor">🔗</a></h2><p>The final model and hyperparameters should be tested with an unseen (hold-out) dataset. This is to avoid overfitting during hyperparameter tuning. In this demo, the testing accuracy reached above .95 using bidirectional LSTM on CoNLL-2003 test data.</p>
     </div>
 
     
