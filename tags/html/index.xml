@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Wine Recommendation Using the Aroma Wheel (Link)</title>
-      <link>https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel-link/</link>
+      <title>Wine Recommendation Using the Aroma Wheel</title>
+      <link>https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel/</link>
       <pubDate>Sun, 22 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel-link/</guid>
-      <description>&lt;p&gt;In this project, I took a modified version of the famous aroma wheel and used word-count to represent the characteristics of French wine. Don’t know how to choose a bottle of wine? Check out your favorite aroma!&lt;/p&gt;</description>
+      <guid>https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel/</guid>
+      <description>&lt;p&gt;In this project, I took a modified version of the famous aroma wheel and used word-count to represent the characteristics of French wine. Don’t know how to choose a bottle of wine? Check out your favorite aroma! &lt;a href=&#34;https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read more&amp;hellip;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

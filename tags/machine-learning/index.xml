@@ -8,21 +8,21 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Use BiLSTM for Name Entity Recognition (Link)</title>
-      <link>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition-link/</link>
+      <title>Use BiLSTM for Name Entity Recognition</title>
+      <link>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition-link/</guid>
-      <description>&lt;p&gt;Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.&lt;/p&gt;</description>
+      <guid>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition/</guid>
+      <description>&lt;p&gt;Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset. &lt;a href=&#34;https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read more&amp;hellip;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Evaluate Intensive Care Needs with ML (Link)</title>
-      <link>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml-link/</link>
+      <title>Evaluate Intensive Care Needs with ML</title>
+      <link>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml-link/</guid>
-      <description>&lt;p&gt;Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings.&lt;/p&gt;</description>
+      <guid>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</guid>
+      <description>&lt;p&gt;Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings. &lt;a href=&#34;https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read more&amp;hellip;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
