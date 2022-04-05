@@ -13,7 +13,7 @@
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/</guid>
-      <description>&lt;p&gt;Word embedding is an effective way to represent the relationship between words. Words with similar neighbors (i.e. context) have similar embeddings. In a now well-known paper published by Mikolov et al. (2013), they demonstrated how to use the continuous bag-of-words (CBOW) model to train word embeddings, which can be applied to analogy and other downstream tasks. This project uses NumPy to train word embeddings by using the CBOW model from scratch and applying them to an analogy task. &lt;a href=&#34;https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Read more&amp;hellip;&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Word embedding is an effective way to represent the relationship between words. Words with similar neighbors (i.e. context) have similar embeddings. In a now well-known paper published by Mikolov et al. (2013), they demonstrated how to use the continuous bag-of-words (CBOW) model to train word embeddings, which can be applied to analogy and other downstream tasks. This project uses NumPy to train word embeddings by using the CBOW model from scratch and applying them to an analogy task.&lt;/p&gt;</description>
     </item>
     
   </channel>

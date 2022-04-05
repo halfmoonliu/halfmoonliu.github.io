@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings. Read more&hellip;">
+<meta name="description" content="Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          762 words
+          760 words
         </span>
         <span class="split">
           ·
@@ -108,7 +108,7 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings. <a href="https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/" target="_blank" rel="noopener">Read more&hellip;</a></p>
+      <p>Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings.</p>
 <h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>Computer-aided evaluation of patient severity can improve the quality of healthcare in hospitals. This <a href="https://github.com/halfmoonliu/PredictDiseaseICUAdmission" target="_blank" rel="noopener">project</a> demonstrates the workflow for building ML models that evaluate the need for intensive care within the first day of admission using randomly generated Electronic Health Records (EHRs). A quick project walkthrough can be found <a href="https://github.com/halfmoonliu/PredictDiseaseICUAdmission/blob/main/ProjectWalkThrough_Predict%20The%20Need%20For%20ICU%20Admission%20of%20Patients%20With%20SpecificDisease.pdf" target="_blank" rel="noopener">here</a>.  Detailed below are the key steps of model buildup workflow. My paper of &ldquo;Evaluation of the need for intensive care in children with pneumonia: A machine learning approach&rdquo; also followed the workflow (with more features fine tuned, see reference).</p>
 <h2 id="step-1-create-dataset">Step 1: Create Dataset <a href="#step-1-create-dataset" class="anchor">🔗</a></h2><p>To demonstrate workflow, randomly generated EHRs were used. Items related to creating a disease-specific severity evaluation model, such as age, sex, diagnosis code, vital signs, lab exams, etc., were included. The generated data imitates the format of real-world EHRs extracted from health information systems.</p>
 <h2 id="step-2-select-cohort-with-specific-disease">Step 2: Select Cohort with Specific Disease <a href="#step-2-select-cohort-with-specific-disease" class="anchor">🔗</a></h2><p>Since the condition of patients with different diseases can be reflected by different physical indices, the first step of building an alarm system is to select a cohort for model building. Here, we select the cohort by their ICD (International Statistical Classification of Diseases and Related Health Problems) code.</p>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset. Read more&hellip;">
+<meta name="description" content="Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          521 words
+          519 words
         </span>
         <span class="split">
           ·
@@ -112,7 +112,7 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset. <a href="https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/" target="_blank" rel="noopener">Read more&hellip;</a></p>
+      <p>Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.</p>
 <h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>This <a href="https://github.com/halfmoonliu/NER" target="_blank" rel="noopener">project</a> demonstrates the workflow of building recurrent neural network models to predict name entity labels using TensorFlow. With a simple structure composed of one embedding layer, one bidirectional LSTM layer, and one dense layer, prediction accuracy on hold-out test datasets can achieve above .95 on the CoNLL-2003 Dataset. Below is a brief introduction of the workflow (tokenization, padding, model buildup, hyperparameter tuning and test).</p>
 <h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The CoNLL-2003 Dataset was separated into training, validation and testing sets. All three datasets contain sentences and name-entity tags corresponding to each word in the text.</p>
 <h2 id="step-1-build-corpus--tags-dictionary">Step 1: Build corpus &amp; tags dictionary <a href="#step-1-build-corpus--tags-dictionary" class="anchor">🔗</a></h2><p>To convert words to numbers, we first read in the sentences and name entities in the training dataset, and thereafter break sentences into word lists (tokenization) and tags. Then we create a dictionary, denoted “Corpus,” to map every word to a number and use an UNK token for unknown words. Another dictionary, denoted “Tags,” is used to store mapping of all name entity tags and their corresponding numbers.</p>
