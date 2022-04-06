@@ -13,7 +13,7 @@
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://halfmoonliu.github.io/posts/machine-translation-using-transformer-models/</guid>
-      <description>&lt;p&gt;One of the most recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks(RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation peformances. In this post, I will walk through building RNN- and transformer-based and machine translation models and compare thier performances. Please have a look!&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks(RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation peformances. In this post, I will walk through building RNN- and transformer-based and machine translation models and compare thier performances. Please have a look!&lt;/p&gt;</description>
     </item>
     
     <item>
