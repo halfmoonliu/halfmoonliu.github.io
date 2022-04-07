@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances. Please have a look!">
+<meta name="description" content="One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          70 words
+          201 words
         </span>
         <span class="split">
           ·
@@ -89,8 +89,9 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances. Please have a look!</p>
-<p>(Under construction&hellip;)</p>
+      <p>One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances.</p>
+<p>Recently, machine translation has gained much success due to a series of endeavors to represent sentences using an encoder-decoder structure. In this structure, two RNN models are put together: the first RNN, or encoder, encodes the information of the source sentence (sentence to be translated when the structure is applied in machine translation); the second RNN model produces the sentence in target language word by word based on the encoding (embedding) of the source sentence. This avoids the problem of word by word translation since languages vary in their syntax. For example, the French sentence &ldquo;Je ne l’aime pas” can be translated into English as “I don’t like him”. “Ne…pas” in French is equivalent to “do not&rdquo; in English. However, due to the word order difference in the two languages. Word-by-word translation is difficult.</p>
+<p>(To be continued&hellip;)</p>
     </div>
 
     
