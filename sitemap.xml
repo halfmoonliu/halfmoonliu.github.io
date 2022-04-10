@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://halfmoonliu.github.io/about/</loc>
+    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://halfmoonliu.github.io/</loc>
-    <lastmod>2022-04-06T00:00:00+00:00</lastmod>
+    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://halfmoonliu.github.io/tags/machine-translation/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
@@ -58,8 +61,6 @@
   </url><url>
     <loc>https://halfmoonliu.github.io/posts/wine-recommendation-using-the-aroma-wheel/</loc>
     <lastmod>2019-09-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://halfmoonliu.github.io/about/</loc>
   </url><url>
     <loc>https://halfmoonliu.github.io/categories/</loc>
   </url>
