@@ -69,13 +69,13 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          364 words
+          449 words
         </span>
         <span class="split">
           ·
         </span>
         <span>
-          2 minute read
+          3 minute read
         </span>
     </div>
 
@@ -93,6 +93,7 @@ if (!doNotTrack) {
     <li><a href="#background">Background</a></li>
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#preprocessing">Preprocessing</a></li>
+    <li><a href="#model-setup">Model Setup</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -107,12 +108,15 @@ if (!doNotTrack) {
 
     <div class="content">
       <p>One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of token-wise information which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances.</p>
-<h2 id="background">Background <a href="#background" class="anchor">🔗</a></h2><p>Recently, machine translation has gained much success due to a series of endeavors to represent sentences using an encoder-decoder structure. In this structure, two RNN models are put together: the first RNN, or encoder, encodes the information of the source sentence (sentence to be translated when the structure is applied in machine translation); the second RNN model produces the sentence in target language word by word based on the encoding (embedding) of the source sentence. This avoids the problem of word by word translation since languages vary in their syntax. For example, the French sentence &ldquo;Je ne l’aime pas” can be translated into English as “I don’t like him”. “Ne…pas” in French is equivalent to “do not&rdquo; in English. Due to the word order difference in the two languages, word-by-word translation is difficult. The encoder-decoder structure addressed this issue and gained better performance on machine translation tasks. Please click here for a <a href="https://github.com/halfmoonliu/SeqToSeq" target="_blank" rel="noopener">demo of the encoder-decoder based machine translation model</a>.</p>
+<h2 id="background">Background <a href="#background" class="anchor">🔗</a></h2><p>RRecently, machine translation has gained much success due to a series of endeavors to represent sentences using an sequence-to-sequence (seq-seq) structure. In this structure, two sequence model are put together: the first one, the encoder, encodes the information of the source sentence (sentence to be translated when the structure is applied in machine translation); the second one, the decoder, produces the sentence in target language word by word based on the encoding (embedding) of the source sentence. This avoids the problem of word by word translation since languages vary in their syntax. For example, the French sentence &ldquo;Je ne l’aime pas” can be translated into English as “I don’t like him”. “Ne…pas” in French is equivalent to “do not&rdquo; in English. Due to the word order difference in the two languages, word-by-word translation is difficult. The encoder-decoder structure addressed this issue and gained better performance on machine translation tasks. Please click here for a <a href="https://github.com/halfmoonliu/SeqToSeq" target="_blank" rel="noopener">demo of the encoder-decoder based machine translation model</a>.</p>
 <h2 id="dataset">Dataset <a href="#dataset" class="anchor">🔗</a></h2><p>The source of the dataset used in this project is <a href="https://tatoeba.org/en" target="_blank" rel="noopener">Tatoeba</a>, a website where people can upload sentences in any language and contribute their own versions of translations in other languages. The English-French dataset used here was downloaded from <a href="https://www.manythings.org/anki/," target="_blank" rel="noopener">https://www.manythings.org/anki/,</a> where they preprocessed the Tatoeba dataset so that it became a text file of English French sentence pairs.</p>
 <h2 id="preprocessing">Preprocessing <a href="#preprocessing" class="anchor">🔗</a></h2><p>The dataset is ingested and the following steps are done before building the machine translation model:</p>
 <ol>
 <li>Texts are transformed to lower case letters, punctuations are removed.</li>
 <li>Word-number dictionaries are created to map every word appeared in the dataset to a unique number before putting in the model.</li>
+</ol>
+<h2 id="model-setup">Model Setup <a href="#model-setup" class="anchor">🔗</a></h2><ol>
+<li>ncoder: The first sequence model in the seq-to-seq structure, the encoder, encodes the information of the sentence in the source language. The encoder outputs a fixed length embedding, which will be the input of the second sequence model, the decoder, to output prediction of word in target language. Several types of layers in the sequence model family can be used as the encoder: for example, RNN (recurrent neural network), GRU (gated  recurrent unit),  LSTM (long-short term memory) are all candidates.</li>
 </ol>
 <p>(To be continued)</p>
 <h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><ol>
