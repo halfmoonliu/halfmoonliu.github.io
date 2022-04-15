@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          480 words
+          532 words
         </span>
         <span class="split">
           ·
@@ -116,7 +116,12 @@ if (!doNotTrack) {
 <li>Word-number dictionaries are created to map every word appeared in the dataset to a unique number before putting in the model.</li>
 </ol>
 <h2 id="model-setup">Model Setup <a href="#model-setup" class="anchor">🔗</a></h2><ol>
-<li>Encoder: The first sequence model in the seq-to-seq structure, the encoder, encodes the information of the sentence in the source language. The encoder outputs a fixed length embedding, which will be the input of the second sequence model, the decoder, to output prediction of word in target language. Several types of layers in the sequence model family can be used as the encoder: for example, RNN (recurrent neural network), GRU (gated  recurrent unit),  LSTM (long-short term memory) are all candidates.</li>
+<li>
+<p>Encoder: The first sequence model in the seq-to-seq structure, the encoder, encodes the information of the sentence in the source language. The encoder outputs a fixed length embedding, which will be the input of the second sequence model, the decoder, to output prediction of word in target language. Several types of layers in the sequence model family can be used as the encoder: for example, RNN (recurrent neural network), GRU (gated  recurrent unit),  LSTM (long-short term memory) are all candidates.</p>
+</li>
+<li>
+<p>Decoder: The second sequence model in the seq-to-seq structure, the decoder, takes the weights in the hidden layer of the encoder as input and generates sentences in target language in a word-by-word fashion. The performance of this decoder will be compared with the later developed attention decoder, which will be described next.</p>
+</li>
 </ol>
 <p>(To be continued)</p>
 <h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><ol>
