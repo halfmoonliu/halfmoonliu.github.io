@@ -69,13 +69,13 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          532 words
+          649 words
         </span>
         <span class="split">
           ·
         </span>
         <span>
-          3 minute read
+          4 minute read
         </span>
     </div>
 
@@ -94,6 +94,7 @@ if (!doNotTrack) {
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#preprocessing">Preprocessing</a></li>
     <li><a href="#model-setup">Model Setup</a></li>
+    <li><a href="#model-output">Model Output</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -120,9 +121,22 @@ if (!doNotTrack) {
 <p>Encoder: The first sequence model in the seq-to-seq structure, the encoder, encodes the information of the sentence in the source language. The encoder outputs a fixed length embedding, which will be the input of the second sequence model, the decoder, to output prediction of word in target language. Several types of layers in the sequence model family can be used as the encoder: for example, RNN (recurrent neural network), GRU (gated  recurrent unit),  LSTM (long-short term memory) are all candidates.</p>
 </li>
 <li>
-<p>Decoder: The second sequence model in the seq-to-seq structure, the decoder, takes the weights in the hidden layer of the encoder as input and generates sentences in target language in a word-by-word fashion. The performance of this decoder will be compared with the later developed attention decoder, which will be described next.</p>
+<p>Decoder: The second sequence model in the seq-to-seq structure, the decoder, takes the weights in the hidden layer of the encoder as input and generates sentences in target language in a word-by-word fashion.</p>
+</li>
+<li>
+<p>Decoder with attention: Instead of taking the last output of the coder, a decoder with attention multiplies output at each step with all encoder outputs to and learns to ‘focus attention’ on different output, which leads to better performance.</p>
 </li>
 </ol>
+<h2 id="model-output">Model Output <a href="#model-output" class="anchor">🔗</a></h2><p>Below are some example output of the transformer model:</p>
+<p>Almost Successful Example:</p>
+<p>Sentence from source language:  the room is too big .
+Model generated sentence:  le piece est trop grand .
+Sentence from target language:  la chambre est trop grande .</p>
+<p>Failed Example:</p>
+<p>Sentence from source language:  you re the best singer i know .
+Model generated sentence:  vous etes la meilleure . . .
+Sentence from target language:  vous etes le meilleur chanteur que je connaisse .</p>
+<p>Next, I will compare the performances of sequence-to-sequence models with and without attention on machine translation tasks.</p>
 <p>(To be continued)</p>
 <h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><ol>
 <li>Cho, K., van Merrienboer, B., Gülçehre, Ç., Bougares, F., Schwenk, H., and Bengio,
