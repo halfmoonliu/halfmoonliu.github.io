@@ -135,15 +135,15 @@ if (!doNotTrack) {
 </ol>
 <h2 id="model-output">Model Output <a href="#model-output" class="anchor">🔗</a></h2><p>After training for 60,000 iterations, the vanilla SeqToSeq model does not seem to generate plausible translations in the 10 randomly chosen pairs. The transformer model generated 1 more likely translation out of the ten samples.</p>
 <h3 id="example-output-seqtoseq-model-without-transformer">Example Output: SeqToSeq model without transformer <a href="#example-output-seqtoseq-model-without-transformer" class="anchor">🔗</a></h3><p>(Eng) do you really think it s impossible? - (French) penses tu vraiment que c est impossible?</p>
-<p>Model generated tranlation from Eng:  penses tu que je n est cela?</p>
+<p>Model generated translation from Eng:  penses tu que je n est cela?</p>
 <p>(Eng) for here or to go? - (French) a emporter ou a consommer sur place ?</p>
-<p>Model generated tranlation from Eng:  ou est ce que tu d ici ?</p>
+<p>Model generated translation from Eng:  ou est ce que tu d ici ?</p>
 <h3 id="example-output-transformer">Example Output: Transformer <a href="#example-output-transformer" class="anchor">🔗</a></h3><p><!-- raw HTML omitted -->Almost Successful Example<!-- raw HTML omitted -->:</p>
 <p>(Eng) the room is too big. - (French) la chambre est trop grande.</p>
-<p>Model generated tranlation from Eng:  le piece est trop grand.</p>
+<p>Model generated translation from Eng:  le piece est trop grand.</p>
 <p><!-- raw HTML omitted -->Failed Example<!-- raw HTML omitted -->:</p>
 <p>(Eng) you re the best singer i know. - (French) vous etes le meilleur chanteur que je connaisse .</p>
-<p>Model generated tranlation from Eng:  vous etes la meilleure . . .</p>
+<p>Model generated translation from Eng:  vous etes la meilleure . . .</p>
 <h2 id="measure-model-performance">Measure Model Performance <a href="#measure-model-performance" class="anchor">🔗</a></h2><p>It is difficult to compare model performance of machine translation by random sampling model outputs. One possible index to measure translation performance is to use the Bleu score.
 Next, I will compare the performances of sequence-to-sequence models with and without attention on machine translation tasks.</p>
 <p>(To be continued)</p>
