@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          649 words
+          763 words
         </span>
         <span class="split">
           ·
@@ -94,7 +94,13 @@ if (!doNotTrack) {
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#preprocessing">Preprocessing</a></li>
     <li><a href="#model-setup">Model Setup</a></li>
-    <li><a href="#model-output">Model Output</a></li>
+    <li><a href="#model-output">Model Output</a>
+      <ul>
+        <li><a href="#example-output-seqtoseq-model-without-transformer">Example Output: SeqToSeq model without transformer</a></li>
+        <li><a href="#example-output-transformer">Example Output: Transformer</a></li>
+      </ul>
+    </li>
+    <li><a href="#measure-model-performance">Measure Model Performance</a></li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
@@ -127,16 +133,19 @@ if (!doNotTrack) {
 <p>Decoder with attention: Instead of taking the last output of the coder, a decoder with attention multiplies output at each step with all encoder outputs to and learns to ‘focus attention’ on different output, which leads to better performance.</p>
 </li>
 </ol>
-<h2 id="model-output">Model Output <a href="#model-output" class="anchor">🔗</a></h2><p>Below are some example output of the transformer model:</p>
-<p>Almost Successful Example:</p>
-<p>Sentence from source language:  the room is too big .
-Model generated sentence:  le piece est trop grand .
-Sentence from target language:  la chambre est trop grande .</p>
-<p>Failed Example:</p>
-<p>Sentence from source language:  you re the best singer i know .
-Model generated sentence:  vous etes la meilleure . . .
-Sentence from target language:  vous etes le meilleur chanteur que je connaisse .</p>
-<p>Next, I will compare the performances of sequence-to-sequence models with and without attention on machine translation tasks.</p>
+<h2 id="model-output">Model Output <a href="#model-output" class="anchor">🔗</a></h2><p>After training for 60,000 iterations, the vanilla SeqToSeq model does not seem to generate plausible translations in the 10 randomly chosen pairs. The transformer model generated 1 more likely translation out of the ten samples.</p>
+<h3 id="example-output-seqtoseq-model-without-transformer">Example Output: SeqToSeq model without transformer <a href="#example-output-seqtoseq-model-without-transformer" class="anchor">🔗</a></h3><p>(Eng) do you really think it s impossible? - (French) penses tu vraiment que c est impossible?</p>
+<p>Model generated tranlation from Eng:  penses tu que je n est cela?</p>
+<p>(Eng) for here or to go? - (French) a emporter ou a consommer sur place ?</p>
+<p>Model generated tranlation from Eng:  ou est ce que tu d ici ?</p>
+<h3 id="example-output-transformer">Example Output: Transformer <a href="#example-output-transformer" class="anchor">🔗</a></h3><p><!-- raw HTML omitted -->Almost Successful Example<!-- raw HTML omitted -->:</p>
+<p>(Eng) the room is too big. - (French) la chambre est trop grande.</p>
+<p>Model generated tranlation from Eng:  le piece est trop grand.</p>
+<p><!-- raw HTML omitted -->Failed Example<!-- raw HTML omitted -->:</p>
+<p>(Eng) you re the best singer i know. - (French) vous etes le meilleur chanteur que je connaisse .</p>
+<p>Model generated tranlation from Eng:  vous etes la meilleure . . .</p>
+<h2 id="measure-model-performance">Measure Model Performance <a href="#measure-model-performance" class="anchor">🔗</a></h2><p>It is difficult to compare model performance of machine translation by random sampling model outputs. One possible index to measure translation performance is to use the Bleu score.
+Next, I will compare the performances of sequence-to-sequence models with and without attention on machine translation tasks.</p>
 <p>(To be continued)</p>
 <h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><ol>
 <li>Cho, K., van Merrienboer, B., Gülçehre, Ç., Bougares, F., Schwenk, H., and Bengio,
