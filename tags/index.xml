@@ -6,7 +6,34 @@
     <description>Recent content in Tags on LIU Yun-Chung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Learning</title>
+      <link>https://halfmoonliu.github.io/tags/deep-learning/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://halfmoonliu.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://halfmoonliu.github.io/tags/machine-learning/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://halfmoonliu.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series Analysis</title>
+      <link>https://halfmoonliu.github.io/tags/time-series-analysis/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://halfmoonliu.github.io/tags/time-series-analysis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Machine Translation</title>
       <link>https://halfmoonliu.github.io/tags/machine-translation/</link>
@@ -35,15 +62,6 @@
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>https://halfmoonliu.github.io/tags/deep-learning/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://halfmoonliu.github.io/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Natural Language Processing</title>
       <link>https://halfmoonliu.github.io/tags/natural-language-processing/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
@@ -58,15 +76,6 @@
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://halfmoonliu.github.io/tags/word-embeddings/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://halfmoonliu.github.io/tags/machine-learning/</link>
-      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://halfmoonliu.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     

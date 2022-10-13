@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Time Series Analysis on LIU Yun-Chung</title>
+    <link>https://halfmoonliu.github.io/tags/time-series-analysis/</link>
+    <description>Recent content in Time Series Analysis on LIU Yun-Chung</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/time-series-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predict Future Number of Taxi Transactions</title>
+      <link>https://halfmoonliu.github.io/posts/predict-future-number-of-taxi-transactions/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://halfmoonliu.github.io/posts/predict-future-number-of-taxi-transactions/</guid>
+      <description>&lt;p&gt;Accurate prediction of future number of taxi transactions enables hailing companies to allocate drivers, design incentives and set prices accordingly. Exploratory analysis on taxi transaction records in New York City from 2015 to 2021 were conducted and temporal regularities were found. Hourly numbers of transactions in 8 taxi zones in December 2019 were used to test the performance of different algorithms. Random forest regression outperformed other algorithms (time series models, long-short term memory) and reached root mean squared error (RMSE) of 9.6, reducing nearly 80% of RMSE of the baseline model of exponential smoothing. Slides and code for this project can be found on GitHub.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
