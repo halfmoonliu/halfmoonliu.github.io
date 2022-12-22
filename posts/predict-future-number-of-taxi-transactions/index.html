@@ -2,23 +2,14 @@
 <html lang="en-us">
   <head>
     <title>Predict Future Number of Taxi Transactions | LIU Yun-Chung</title>
-
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
 <meta name="description" content="Accurate prediction of future number of taxi transactions enables hailing companies to allocate drivers, design incentives and set prices accordingly. Exploratory analysis on taxi transaction records in New York City from 2015 to 2021 were conducted and temporal regularities were found. Hourly numbers of transactions in 8 taxi zones in December 2019 were used to test the performance of different algorithms. Random forest regression outperformed other algorithms (time series models, long-short term memory) and reached root mean squared error (RMSE) of 9.6, reducing nearly 80% of RMSE of the baseline model of exponential smoothing. Slides and code for this project can be found on GitHub.">
 <meta name="generator" content="Hugo 0.87.0" />
-
-
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-
-
 <link rel="stylesheet" href="/css/style.css">
-
-
-
 <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-
  
     
 <script type="application/javascript">
@@ -31,15 +22,7 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-
-
-
-
   </head>
-
   <body>
     <nav class="navigation">
 	
@@ -48,21 +31,15 @@ if (!doNotTrack) {
 	<a href="/posts">Archive</a>
 	<a href="/tags">Tags</a>
 	<a href="/about">About</a>
-
 	
-
 	
 	  <a class="button" href="https://halfmoonliu.github.io/index.xml">Subscribe</a>
 	
 </nav>
-
-
     <main class="main">
       
-
 <section id="single">
     <h1 class="title">Predict Future Number of Taxi Transactions</h1>
-
     <div class="tip">
         <time datetime="2022-10-13 00:00:00 &#43;0000 UTC">Oct 13, 2022</time>
         <span class="split">
@@ -78,7 +55,6 @@ if (!doNotTrack) {
           5 minute read
         </span>
     </div>
-
     
     
         
@@ -103,10 +79,7 @@ if (!doNotTrack) {
       </details>
     </aside>
   
-
-
     
-
 
     <div class="content">
       <p>Accurate prediction of future number of taxi transactions enables hailing companies to allocate drivers, design incentives and set prices accordingly. Exploratory analysis on taxi transaction records in New York City from 2015 to 2021 were conducted and temporal regularities were found. Hourly numbers of transactions in 8 taxi zones in December 2019 were used to test the performance of different algorithms. Random forest regression outperformed other algorithms (time series models, long-short term memory) and reached root mean squared error (RMSE) of 9.6, reducing nearly 80% of RMSE of the baseline model of exponential smoothing. Slides and code for this project can be found on GitHub.</p>
@@ -118,14 +91,18 @@ Taxi zones can thus be categorized  grouped into 4 tiers. Tier 1 zones have more
 <h2 id="framing-the-task">Framing the task <a href="#framing-the-task" class="anchor">🔗</a></h2><p>The goal of this project is to predict the number of taxi transactions in the future with fine temporal and spatial resolution. The transaction records from 8 randomly selected taxi zones (2 from each tier) of December 2019 are used to test different algorithms. Transaction records before December 2019 were used to train models (if needed). Root Mean Squared Error (RMSE) is used to evaluate prediction results; the lower the RMSE, the closer the prediction is to the actual number of taxi transactions.</p>
 <h2 id="model-output">Model Output <a href="#model-output" class="anchor">🔗</a></h2><p><strong>1. Time Series Models:</strong> using only the previous number of transactions, time series models can be applied to predict future amounts of transactions. In the project, exponential smoothing  (baseline), Autoregressive model (AR), Moving Average model (MA), ARMA model were tested. <!-- raw HTML omitted --><br>
 <strong>2. Machine Learning Models:</strong> machine learning models can leverage more features for the prediction task. For example, since we discovered hourly, daily and monthly trends in taxi tran sanctions, hour of day, day of week and month can be used to predict the amount of transactions at future time points. In the project, Random Forest Regression and Long Short-Term Memory (LSTM) models were tested.</p>
+<<<<<<< HEAD
 <h2 id="results-and-interpretation">Results and Interpretation <a href="#results-and-interpretation" class="anchor">🔗</a></h2><p>Random forest regression outperformed other algorithms (time series models, long-short term memory) and RMSE of 9.6, reducing nearly 80% of RMSE of the baseline model of exponential smoothing (RMSE 45.7). Hour of day, day of week, month, number of taxi transactions in the taxi zone and 2 neighboring zones (t-1~t-6) were used as features.</p>
 <p>The enhancement of performance using random forest regression can be due to the algorithm itself and the features chosen. Because the number of  transactions follow monthly, daily and hourly, these can serve as useful features to determine the amount of transaction at a given hour. However, the same features did not work as well on the LSTM model. This can be because it is difficult for the LSTM model to converge and find optimal parameters. Number of transactions at t-1 to t-6 of every taxi zone and two neighbors were used as features. However, at different time points, the relationship between the current number of transactions and previous numbers are different. For example, at 5 pm the number of transactions is high in one taxi zone. The transactions from 11 am to 4 pm are low. However, at 11 pm, the reverse might be true. The poor performance could be due to the nature of the LSTM model and sparse data per hour/ zone.</p>
+=======
+<h2 id="results-and-interpretation">Results and Interpretation <a href="#results-and-interpretation" class="anchor">🔗</a></h2><p> <b>Random forest regression outperformed other algorithms</b> (time series models, long-short term memory) with an RMSE of 9.6, reducing nearly 80% of RMSE of the baseline model of exponential smoothing (RMSE 45.7). Hour of day, day of week, month, number of taxi transactions in the taxi zone and 2 neighboring zones (t-1~t-6) were used as features.</p>
+<p>The enhancement of performance using random forest regression can be due to the algorithm itself and the features chosen. Because the number of  transactions follow monthly, daily and hourly, these can serve as useful features to determine the amount of transaction at a given hour. However, the same features did not work as well on the LSTM model. This can be because it is difficult for the LSTM model to converge and find optimal parameters. Number of transactions at t-1 to t-6 of every taxi zone and two neighbors were used as features. However, at different time points, the relationship between the current number of transactions and previous numbers are different. For example, at 5 pm the number of transactions is high in one taxi zone. The transactions from 11 am to 4 pm are low. However, at 11 pm, the reverse might be true. Due to the nature of the LSTM model and sparse data per hour/ zone</p>
+>>>>>>> origin/main
 <h2 id="next-steps">Next Steps <a href="#next-steps" class="anchor">🔗</a></h2><p><strong>1. Include other features:</strong> other features, such as weather, temperature may be helpful for the prediction task.<!-- raw HTML omitted --><br>
 <strong>2. Leverage other algorithms:</strong> Other models can be leveraged or combined for future taxi transaction prediction.<!-- raw HTML omitted --><br>
 <strong>3. Scale up:</strong> The algorithms can be used to predict future transactions in every zone in New York City. Data points from longer periods of time can be used for model training.<!-- raw HTML omitted --><br>
 <strong>4. Modify model on the go:</strong> Different patterns and features might occur as time goes. Thus, the model and weights should be constantly adjusted to optimize prediction results.</p>
     </div>
-
     
         <div class="tags">
             
@@ -162,18 +139,12 @@ Taxi zones can thus be categorized  grouped into 4 tiers. Tier 1 zones have more
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
-
-
 </section>
-
-
     </main>
     
     <footer id="footer">
     
         <div id="social">
-
-
     <a class="symbol" href="https://github.com/halfmoonliu" rel="me" target="_blank">
         
         <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -191,12 +162,8 @@ Taxi zones can thus be categorized  grouped into 4 tiers. Tier 1 zones have more
     </g>
 </svg>
     </a>
-
-
 </div>
-
     
-
     <div class="copyright">
     
        © Copyright 
@@ -209,11 +176,7 @@ Taxi zones can thus be categorized  grouped into 4 tiers. Tier 1 zones have more
        LIU Yun-Chung
     
     </div>
-
     
 </footer>
-
-
-
   </body>
 </html>
