@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://halfmoonliu.github.io/tags/deep-learning/</loc>
-    <lastmod>2022-10-13T00:00:00+00:00</lastmod>
+    <loc>https://halfmoonliu.github.io/about/</loc>
+    <lastmod>2023-01-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://halfmoonliu.github.io/</loc>
+    <lastmod>2023-01-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://halfmoonliu.github.io/tags/deep-learning/</loc>
     <lastmod>2022-10-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://halfmoonliu.github.io/tags/machine-learning/</loc>
@@ -22,9 +25,6 @@
   </url><url>
     <loc>https://halfmoonliu.github.io/tags/time-series-analysis/</loc>
     <lastmod>2022-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://halfmoonliu.github.io/about/</loc>
-    <lastmod>2022-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://halfmoonliu.github.io/tags/machine-translation/</loc>
     <lastmod>2022-04-06T00:00:00+00:00</lastmod>
