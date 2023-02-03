@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of encoder output at every time step, which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances.">
+<meta name="description" content="One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of encoder output at every time step, which further enhances machine translation performances. In this project, I trained both models and showed that attention-based models gained 6.8% in BLEU score on an English-French translation dataset from Tatoeba.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          1006 words
+          1005 words
         </span>
         <span class="split">
           ·
@@ -115,7 +115,7 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of encoder output at every time step, which further enhances machine translation performances. In this post, I will walk through the structure of RNN- and transformer-based and machine translation models, steps to build them and compare their performances.</p>
+      <p>One of recent breakthroughs in machine translation is the application of the transformer. Compared with the sequence-to-sequence model based on recurrent neural networks (RNN), the attention-based transformer model makes use of encoder output at every time step, which further enhances machine translation performances. In this project, I trained both models and showed that attention-based models gained 6.8% in BLEU score on an English-French translation dataset from Tatoeba.</p>
 <h2 id="background">Background <a href="#background" class="anchor">🔗</a></h2><p>Recently, machine translation has gained much success due to a series of endeavors to represent sentences using an sequence-to-sequence (seq-to-seq) model (Please click here for <a href="https://github.com/halfmoonliu/SeqToSeq" target="_blank" rel="noopener">my demo of the seq-to-seq based machine translation model</a>). In this structure, two sequence model are put together: the first one, the encoder, encodes the information of the source sentence (sentence to be translated when the structure is applied in machine translation); the second one, the decoder, produces the sentence in target language word by word based on the encoding (embedding) of the source sentence. This avoids the problem of word by word translation since languages vary in their syntax. For example, the French sentence &ldquo;Je ne l’aime pas” can be translated into English as “I don’t like him”. “Ne…pas” in French is equivalent to “do not&rdquo; in English. Due to the word order difference in the two languages, word-by-word translation is difficult. The encoder-decoder structure addressed this issue and gained better performance on machine translation tasks.</p>
 <h2 id="dataset">Dataset <a href="#dataset" class="anchor">🔗</a></h2><p>The source of the dataset used in this project is <a href="https://tatoeba.org/en" target="_blank" rel="noopener">Tatoeba</a>, a website where people can upload sentences in any language and contribute their own versions of translations in other languages. The English-French dataset used here was downloaded from <a href="https://www.manythings.org/anki/," target="_blank" rel="noopener">https://www.manythings.org/anki/,</a> where they preprocessed the Tatoeba dataset so that it became a text file of English French sentence pairs.</p>
 <h2 id="preprocessing">Preprocessing <a href="#preprocessing" class="anchor">🔗</a></h2><p>The dataset is ingested and the following steps are done before building the machine translation model:</p>
