@@ -17,11 +17,11 @@
     </item>
     
     <item>
-      <title>Training Word Embeddings from Scratch Using Numpy</title>
-      <link>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch-using-numpy/</link>
+      <title>Training Word Embeddings from Scratch</title>
+      <link>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch-using-numpy/</guid>
+      <guid>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch/</guid>
       <description>&lt;p&gt;Word embedding is an effective way to represent words, carrying semantic and syntactic information with a predefined length of numbers. In a well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. Words with similar neighbors (i.e. context) have similar embeddings. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.&lt;/p&gt;</description>
     </item>
     
