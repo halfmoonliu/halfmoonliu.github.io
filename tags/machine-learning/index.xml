@@ -8,20 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Predict Future Number of Taxi Transactions</title>
-      <link>https://halfmoonliu.github.io/posts/predict-future-number-of-taxi-transactions/</link>
+      <title>Predicting Future Number of Taxi Transactions</title>
+      <link>https://halfmoonliu.github.io/posts/predicting-future-number-of-taxi-transactions/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/predict-future-number-of-taxi-transactions/</guid>
+      <guid>https://halfmoonliu.github.io/posts/predicting-future-number-of-taxi-transactions/</guid>
       <description>&lt;p&gt;Accurate prediction for future number of taxi transactions enables taxi hailing companies to allocate drivers, design incentives and set prices accordingly. In this project, I showed that Random Forest Regressor achieved 80% less root mean squared error (RMSE) than the baseline time series model on the task of predicting future number of taxi transactions. Exploratory analyses were first conducted on taxi transaction records in New York City from 2015 to 2021 and temporal regularities were found. Hourly numbers of transactions in December 2019 in 8 taxi zones were used to test the performance of different algorithms. Using hour, day, month and number of transactions at previous time points as features, Random Forest Regression outperformed other algorithms (time series models, Long-Short Term Memory) and reached RMSE of 9.6, thereby reducing the RMSE of the exponential smoothing baseline by 80%. Slides and code for this project can be found on GitHub.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Use BiLSTM for Name Entity Recognition</title>
-      <link>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition/</link>
+      <title>Using BiLSTM for Name Entity Recognition</title>
+      <link>https://halfmoonliu.github.io/posts/using-bilstm-for-name-entity-recognition/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/use-bilstm-for-name-entity-recognition/</guid>
+      <guid>https://halfmoonliu.github.io/posts/using-bilstm-for-name-entity-recognition/</guid>
       <description>&lt;p&gt;Name Entity Recognition (NER) is a natural language processing task for categorizing words into name entities with numerous applications (e.g., searching, text classification, etc.). The following is a demo on how I trained a Bi-directional Long-Short Term Memory (BiLSTM) model to predict name entities with an accuracy of over .95 using the CoNLL-2003 Dataset.&lt;/p&gt;</description>
     </item>
     
