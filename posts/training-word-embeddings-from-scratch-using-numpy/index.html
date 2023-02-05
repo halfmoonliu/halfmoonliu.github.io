@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="Word embedding is an effective way to represent the relationship between words. Words with similar neighbors (i.e. context) have similar embeddings. In a now well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.">
+<meta name="description" content="Word embedding is an effective way to represent words, carrying semantic and syntactic information with a predefined length of numbers. In a well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. Words with similar neighbors (i.e. context) have similar embeddings. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.">
 <meta name="generator" content="Hugo 0.87.0" />
 
 
@@ -69,7 +69,7 @@ if (!doNotTrack) {
           ·
         </span>
         <span>
-          316 words
+          323 words
         </span>
         <span class="split">
           ·
@@ -107,7 +107,7 @@ if (!doNotTrack) {
 
 
     <div class="content">
-      <p>Word embedding is an effective way to represent the relationship between words. Words with similar neighbors (i.e. context) have similar embeddings. In a now well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.</p>
+      <p>Word embedding is an effective way to represent words, carrying semantic and syntactic information with a predefined length of numbers. In a well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. Words with similar neighbors (i.e. context) have similar embeddings. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.</p>
 <h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>In this <a href="https://github.com/halfmoonliu/WordEmbeddings" target="_blank" rel="noopener">project</a>, I tried to use an early version of Wikipedia <a href="https://dumps.wikimedia.org" target="_blank" rel="noopener">Wikipedia content</a> to train word embeddings using the above method. The resulting word embeddings were visualized on a 2D domain and the distances between them were calculated.</p>
 <h2 id="dataset">Dataset: <a href="#dataset" class="anchor">🔗</a></h2><p>The dataset used in the project was an early backup version of Wikipedia content (~2006) containing about ~100M tokens. This choice was made due to computational resource constraints.</p>
 <h2 id="background">Background <a href="#background" class="anchor">🔗</a></h2><p>Word embedding is a way to represent words with predefined dimensions that can be interpreted as bearing meaning or syntactic relationship. In the well-known paper by Mikolov et al. (2013), they proposed a continuous bag-of-words model using a given window of tokens to predict any token’s neighbors. Thus, words with similar neighbors have similar weights in the neural network model, or embeddings. Words with similar embeddings (e.g., defined using cosine similarity or Euclidean distance) tend to be similar semantically or syntactically.</p>
