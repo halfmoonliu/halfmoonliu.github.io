@@ -26,12 +26,12 @@
     </item>
     
     <item>
-      <title>Evaluate Intensive Care Needs with ML</title>
-      <link>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</link>
+      <title>Evaluation of Intensive Care Needs with Machine Learning</title>
+      <link>https://halfmoonliu.github.io/posts/evaluation-of-intensive-care-needs-with-machine-learning/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/evaluate-intensive-care-needs-with-ml/</guid>
-      <description>&lt;p&gt;Machine learning (ML) can be used by hospitals to improve the quality of healthcare. The purpose of this post is to demonstrate the steps necessary to build ML models that evaluate the need for intensive care within the first 24 hours of hospital admission. This post includes the workflow process of data cleansing, feature engineering, and model building, which can be applied directly to real-world settings.&lt;/p&gt;</description>
+      <guid>https://halfmoonliu.github.io/posts/evaluation-of-intensive-care-needs-with-machine-learning/</guid>
+      <description>&lt;p&gt;Machine learning (ML) can be applied for medical decision support in clinical settings. In this post, I demonstrated the workflow of training ML models for pediatric pneumonia patient risk evaluation using randomly generated electronic health records (EHRs). I started with data cleansing and exploratory analysis on physician-identified biological indices, such as pathogens, lab data and vital signs. The goal train model to classify patients into 2 groups, high-risk patients with the need for intensive care and low risk patients. Various ML models, such as logistic regression, boosted trees and feedforward neural networks were applied for the classification task. The workflow was applied on real-world EHRs at National Taiwan University Hospital and achieved an AuROC of 0.99. The detailed methodologies and results were published in JMIR Medical Informatics (Liu et al., 2022).&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Evaluation of Intensive Care Needs with Machine Learning | LIU Yun-Chung</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Machine learning (ML) can be applied for medical decision support in clinical settings. In this post, I demonstrated the workflow of training ML models for pediatric pneumonia patient risk evaluation using randomly generated electronic health records (EHRs). I started with data cleansing and exploratory analysis on physician-identified biological indices, such as pathogens, lab data and vital signs. The goal train model to classify patients into 2 groups, high-risk patients with the need for intensive care and low risk patients. Various ML models, such as logistic regression, boosted trees and feedforward neural networks were applied for the classification task. The workflow was applied on real-world EHRs at National Taiwan University Hospital and achieved an AuROC of 0.99. The detailed methodologies and results were published in JMIR Medical Informatics (Liu et al., 2022).">
+<meta name="generator" content="Hugo 0.87.0" />
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'your-google-analytics-id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+	  <a class="button" href="https://halfmoonliu.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Evaluation of Intensive Care Needs with Machine Learning</h1>
+
+    <div class="tip">
+        <time datetime="2021-01-19 00:00:00 &#43;0000 UTC">Jan 19, 2021</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          827 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          4 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#quick-summary">Quick Summary</a></li>
+    <li><a href="#step-1-create-dataset">Step 1: Create Dataset</a></li>
+    <li><a href="#step-2-select-cohort-with-specific-disease">Step 2: Select Cohort with Specific Disease</a></li>
+    <li><a href="#step-3-data-preprocessing-and-feature-engineering">Step 3: Data Preprocessing and Feature Engineering</a></li>
+    <li><a href="#step-4-model-selection-and-hyperparameter-tuning">Step 4: Model Selection and Hyperparameter Tuning</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Machine learning (ML) can be applied for medical decision support in clinical settings. In this post, I demonstrated the workflow of training ML models for pediatric pneumonia patient risk evaluation using randomly generated electronic health records (EHRs). I started with data cleansing and exploratory analysis on physician-identified biological indices, such as pathogens, lab data and vital signs. The goal train model to classify patients into 2 groups, high-risk patients with the need for intensive care and low risk patients. Various ML models, such as logistic regression, boosted trees and feedforward neural networks were applied for the classification task. The workflow was applied on real-world EHRs at National Taiwan University Hospital and achieved an AuROC of 0.99. The detailed methodologies and results were published in JMIR Medical Informatics (Liu et al., 2022).</p>
+<h2 id="quick-summary">Quick Summary <a href="#quick-summary" class="anchor">🔗</a></h2><p>Computer-aided evaluation of patient severity can improve the quality of healthcare in hospitals. This <a href="https://github.com/halfmoonliu/PredictDiseaseICUAdmission" target="_blank" rel="noopener">project</a> demonstrates the workflow for building ML models that evaluate the need for intensive care within the first day of admission using randomly generated Electronic Health Records (EHRs). A quick project walkthrough can be found <a href="https://github.com/halfmoonliu/PredictDiseaseICUAdmission/blob/main/ProjectWalkThrough_Predict%20The%20Need%20For%20ICU%20Admission%20of%20Patients%20With%20SpecificDisease.pdf" target="_blank" rel="noopener">here</a>.  Detailed below are the key steps of model buildup workflow. My paper of &ldquo;Evaluation of the need for intensive care in children with pneumonia: machine learning approach&rdquo; also followed the workflow (Liu et al., 2022, with more features fine tuned, see reference).</p>
+<h2 id="step-1-create-dataset">Step 1: Create Dataset <a href="#step-1-create-dataset" class="anchor">🔗</a></h2><p>To demonstrate workflow, randomly generated EHRs were used. Items related to creating a disease-specific severity evaluation model, such as age, sex, diagnosis code, vital signs, lab exams, etc., were included. The generated data imitates the format of real-world EHRs extracted from health information systems.</p>
+<h2 id="step-2-select-cohort-with-specific-disease">Step 2: Select Cohort with Specific Disease <a href="#step-2-select-cohort-with-specific-disease" class="anchor">🔗</a></h2><p>Since the condition of patients with different diseases can be reflected by different physical indices, the first step of building an alarm system is to select a cohort for model building. Here, we select the cohort by their ICD (International Statistical Classification of Diseases and Related Health Problems) code.</p>
+<p>An ICD code is a detailed classification of existing diseases that evolves through time. Thus, multiple ICD codes can be grouped as one disease. For example, ICD codes 485 (bronchopneumonia, organism unspecified) and 486 (pneumonia, organism unspecified) can both be considered pneumonia-related codes. As time passes, new ICD versions will replace the older version. 485 and 486 are codes from ICD-9; the corresponding codes in ICD-10 are J18.0 (Bronchopneumonia, unspecified organism), J18.8 (Other pneumonia, unspecified organism), and J18.9 (Pneumonia, unspecified organism). As demonstrated by their respective codes, similar diseases have similar ICD codes. In ICD-10, codes beginning with J1 are all diseases related to pneumonia or respiratory tract infections; codes that begin with J18 are different forms of “pneumonia, unspecified organism.”</p>
+<h2 id="step-3-data-preprocessing-and-feature-engineering">Step 3: Data Preprocessing and Feature Engineering <a href="#step-3-data-preprocessing-and-feature-engineering" class="anchor">🔗</a></h2><p>a. Comorbid Conditions:</p>
+<p>Comorbid conditions can impact prognosis. For example, pneumonia patients with cardiovascular diseases are at higher risk of ICU admission. Thus, we can group the diagnosis codes of a number of comorbid conditions (i.e., if a patient has any of the diagnosis codes A, B, or C, he/she is considered to have Comorbid Condition 1). In the demonstration, five comorbid conditions were included in the model as features (with/without the comorbid condition).</p>
+<p>b. Pathogen:</p>
+<p>For infectious diseases, pathogens are related to the evaluation of severity. For example, bacterial pneumonia tends to be more severe in children than viral pneumonia. In this demonstration, regular expression was used to extract positive pathogen exam findings and add those findings to the ML model as one feature (with/without positive findings from the pathogen).</p>
+<p>c. Lab Data:</p>
+<p>Various biochemical tests conducted in labs can reveal patients’ general body functions (e.g., white blood cell count, C-Reactive Protein, etc.). To evaluate the need for intensive care of inpatients on the first day, initial records of lab data were included as features for machine learning models.</p>
+<p>d. Vital signs:</p>
+<p>Vital signs, such as temperature, pulse, and blood pressure, are important indicators of patient condition. In this demo, minimum systolic and diastolic pressure, maximum temperature, and pulse were recorded within the first day of admission and included as features in the model to predict ICU admission.</p>
+<h2 id="step-4-model-selection-and-hyperparameter-tuning">Step 4: Model Selection and Hyperparameter Tuning <a href="#step-4-model-selection-and-hyperparameter-tuning" class="anchor">🔗</a></h2><p>In outcome prediction tasks where few features are of fine temporal resolution, tree-based methods, such as XGboost and random forest, can yield good performances. In these models, maximum depth of trees, learning rate, and regularization are some of the hyperparameters that can further enhance model prediction power. ML models can outperform existing indices and severity scores that clinicians currently use, which come from previous studies using logistic regression models. In the demo, six machine learning models were chosen for the prediction task: Boosted Trees, random forest, feedforward neural network, logistic regression, Support Vector Machines (SVM) and K-nearest neighbors (KNN).</p>
+<h2 id="reference">Reference <a href="#reference" class="anchor">🔗</a></h2><p><strong><!-- raw HTML omitted -->Liu Y-C<!-- raw HTML omitted --></strong>, Cheng H-Y, Chang T-H, Ho T-W, Liu T-C, Yen T-Y, et al. Evaluation of the need for intensive care in children with pneumonia: A machine learning 2.approach. <em>JMIR Med Inform.</em> 2022;10(1):e28934. doi:10.2196/28934</p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://halfmoonliu.github.io/tags/machine-learning">Machine Learning</a>
+            
+                <a href="https://halfmoonliu.github.io/tags/deep-learning">Deep Learning</a>
+            
+                <a href="https://halfmoonliu.github.io/tags/precision-medicine">Precision Medicine</a>
+            
+        </div>
+    
+    
+    
+  <div id="comment">
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "your-disqus-shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/halfmoonliu" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#bbbbbb"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2023 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       LIU Yun-Chung
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://halfmoonliu.github.io/tags/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Train Word Embeddings with CBOW Model</title>
-      <link>https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/</link>
+      <title>Training Word Embeddings from Scratch Using Numpy</title>
+      <link>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch-using-numpy/</link>
       <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://halfmoonliu.github.io/posts/train-word-embeddings-with-cbow-model/</guid>
+      <guid>https://halfmoonliu.github.io/posts/training-word-embeddings-from-scratch-using-numpy/</guid>
       <description>&lt;p&gt;Word embedding is an effective way to represent the relationship between words. Words with similar neighbors (i.e. context) have similar embeddings. In a now well-known paper, Mikolov et al. (2013) demonstrated the Word2vec technique to train word embeddings, including the continuous bag-of-words (CBOW) and skip gram model. The technique has inspired many later works on training word embedding, which can be applied to analogy and other downstream tasks. In this project, I used NumPy to train word embeddings applying the CBOW model to demonstrate the structure and math of the model and applied the resulting embeddings to an analogy task.&lt;/p&gt;</description>
     </item>
     
